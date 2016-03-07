@@ -13,6 +13,10 @@ namespace TweetNicoCount
     {
         static void Main()
         {
+
+
+
+
             TweetQuerychanCountAsync().Wait();
 #if DEBUG
             Console.WriteLine("fin");
@@ -31,17 +35,23 @@ namespace TweetNicoCount
                     = string.Format("{{\"query\":\"{0}\",\"service\":[\"video\"],\"search\":[\"title\",\"description\",\"tags\"],\"join\":[\"cmsid\",\"title\",\"description\",\"thumbnail_url\",\"start_time\",\"view_counter\",\"comment_counter\",\"mylist_counter\",\"channel_id\",\"main_community_id\",\"length_seconds\",\"last_res_body\"],\"filters\":[],\"sort_by\":\"start_time\",\"order\":\"desc\",\"from\":0,\"size\":25,\"timeout\":10000,\"issuer\":\"pc\",\"reason\":\"user\"}}", QUERY);
 
             // nicovideo.jpをクエリー検索して結果のJSONを取得する.
-            string rawJson = null;
-            using (var client = new HttpClient())
+            var rawJson = await new Func<Task<string>>(async () =>
             {
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MEDIA_TYPE));
-                var content = new StringContent(postConstnt, System.Text.Encoding.UTF8, MEDIA_TYPE);
-                var response = await client.PostAsync(URL, content);
-                if (response.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    rawJson = await response.Content.ReadAsStringAsync();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MEDIA_TYPE));
+                    var content = new StringContent(postConstnt, System.Text.Encoding.UTF8, MEDIA_TYPE);
+                    var response = await client.PostAsync(URL, content);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return await response.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-            }
+            })();
 
             if (rawJson != null)
             {
