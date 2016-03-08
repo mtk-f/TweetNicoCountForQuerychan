@@ -74,11 +74,10 @@ namespace TweetNicoCount
                 {
                     var json = JsonConvert.DeserializeAnonymousType(sanitizedJson, definition);
                     var total = json.Values.Total;
-
                     var msg = string.Format("nicovide.jpに投稿された {0} の動画は ＼{1}件／ です\n"
-                        + "http://search.nicovideo.jp/video/search/mmd%20%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%A1%E3%82%83%E3%82%93?sort=upload_time\n"
-                        + "{2}",
-                        QUERY, total, TWEET_TAG);
+                        + "http://search.nicovideo.jp/video/search/{2}?sort=upload_time\n"
+                        + "{3}",
+                        QUERY, total, Uri.EscapeUriString(QUERY), TWEET_TAG);
                     await TweetMessageAsync(msg);
                 }
                 catch (JsonException e)
