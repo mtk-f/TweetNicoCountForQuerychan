@@ -5,7 +5,6 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using CoreTweet;
 using System.Configuration;
-using System.Threading;
 
 namespace TweetNicoCount
 {
@@ -13,10 +12,6 @@ namespace TweetNicoCount
     {
         static void Main()
         {
-
-
-
-
             TweetQuerychanCountAsync().Wait();
 #if DEBUG
             Console.WriteLine("fin");
@@ -80,28 +75,29 @@ namespace TweetNicoCount
                     var json = JsonConvert.DeserializeAnonymousType(sanitizedJson, definition);
                     var total = json.Values.Total;
 
-                    var msg = string.Format("nicovide.jpに投稿された {0} の動画は ＼ {1}件／ です\n"
+                    var msg = string.Format("nicovide.jpに投稿された {0} の動画は ＼{1}件／ です\n"
                         + "http://search.nicovideo.jp/video/search/mmd%20%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%A1%E3%82%83%E3%82%93?sort=upload_time\n"
                         + "{2}",
                         QUERY, total, TWEET_TAG);
-                    TweetMessage(msg);
+                    await TweetMessageAsync(msg);
                 }
                 catch (JsonException e)
                 {
                     var msg = string.Format("{0} JsonException\n{1} {2}", TWITTER_SCREEN_NAME, e.Message, TWEET_TAG);
                     Console.WriteLine(msg);
-                    TweetMessage(msg);
+                    await TweetMessageAsync(msg);
                 }
             }
             else
             {
                 var msg = string.Format("{0} failed to get Web API responses {1}", TWITTER_SCREEN_NAME, TWEET_TAG);
                 Console.WriteLine(msg);
-                TweetMessage(msg);
+                await TweetMessageAsync(msg);
             }
         }
 
-        private static void TweetMessage(string msg)
+#pragma warning disable 1998
+        private static async Task TweetMessageAsync(string msg)
         {
 #if DEBUG
             Console.WriteLine(msg);
@@ -111,8 +107,9 @@ namespace TweetNicoCount
             var twitterAccessToken = ConfigurationManager.AppSettings["twitterAccessToken"];
             var twitterAccessSecret = ConfigurationManager.AppSettings["TwitterAccessSecret"];
             var tokens = Tokens.Create(twitterApiKey, twitterSecretKey, twitterAccessToken, twitterAccessSecret);
-            tokens.Statuses.Update(status => msg);
+            await tokens.Statuses.UpdateAsync(status => msg);
 #endif
         }
+#pragma warning restore 1998
     }
 }
