@@ -1,0 +1,2 @@
+# TweetNicoCountForQuerychan
+クエリちゃんの動画投稿数をツイートするサービス
