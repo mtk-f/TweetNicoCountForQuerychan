@@ -26,7 +26,7 @@ namespace TweetNicoCount
             const string URL = "http://api.search.nicovideo.jp/api/";
             const string QUERY = "mmd クエリちゃん";
             const string MEDIA_TYPE = "application/json";
-            var postConstnt
+            var postConstent
                     = string.Format("{{\"query\":\"{0}\",\"service\":[\"video\"],\"search\":[\"title\",\"description\",\"tags\"],\"join\":[\"cmsid\",\"title\",\"description\",\"thumbnail_url\",\"start_time\",\"view_counter\",\"comment_counter\",\"mylist_counter\",\"channel_id\",\"main_community_id\",\"length_seconds\",\"last_res_body\"],\"filters\":[],\"sort_by\":\"start_time\",\"order\":\"desc\",\"from\":0,\"size\":25,\"timeout\":10000,\"issuer\":\"pc\",\"reason\":\"user\"}}", QUERY);
 
             // nicovideo.jpをクエリー検索して結果のJSONを取得する.
@@ -35,7 +35,7 @@ namespace TweetNicoCount
                 using (var client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MEDIA_TYPE));
-                    var content = new StringContent(postConstnt, System.Text.Encoding.UTF8, MEDIA_TYPE);
+                    var content = new StringContent(postConstent, System.Text.Encoding.UTF8, MEDIA_TYPE);
                     var response = await client.PostAsync(URL, content);
                     if (response.IsSuccessStatusCode)
                     {
