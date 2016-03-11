@@ -43,10 +43,16 @@ namespace TweetNicoCount
                     }
                     else
                     {
-                        return null;
+                        return await Task.FromResult<string>(null);
                     }
                 }
             })();
+
+            // ツイッターAPIのトークンを取得する.
+            var tokens = Tokens.Create(ConfigurationManager.AppSettings["TwitterApiKey"], 
+                ConfigurationManager.AppSettings["TwitterSecretKey"], 
+                ConfigurationManager.AppSettings["twitterAccessToken"], 
+                ConfigurationManager.AppSettings["TwitterAccessSecret"]);
 
             if (rawJson != null)
             {
@@ -78,37 +84,27 @@ namespace TweetNicoCount
                         + "http://search.nicovideo.jp/video/search/{2}?sort=upload_time\n"
                         + "{3}",
                         QUERY, total, Uri.EscapeUriString(QUERY), TWEET_TAG);
-                    await TweetMessageAsync(msg);
+
+                    // 検索した結果をツイッターに投稿する.
+#if DEBUG
+                    Console.WriteLine(msg);
+#else
+                    await tokens.Statuses.UpdateAsync(status => msg);
+#endif
                 }
                 catch (JsonException e)
                 {
                     var msg = string.Format("{0} JsonException\n{1} {2}", TWITTER_SCREEN_NAME, e.Message, TWEET_TAG);
                     Console.WriteLine(msg);
-                    await TweetMessageAsync(msg);
+                    await tokens.Statuses.UpdateAsync(status => msg);
                 }
             }
             else
             {
                 var msg = string.Format("{0} failed to get Web API responses {1}", TWITTER_SCREEN_NAME, TWEET_TAG);
                 Console.WriteLine(msg);
-                await TweetMessageAsync(msg);
+                await tokens.Statuses.UpdateAsync(status => msg);
             }
-        }
-
-        // ツイートを投稿する.
-        private static async Task TweetMessageAsync(string msg)
-        {
-#if DEBUG
-            Console.WriteLine(msg);
-            await Task.FromResult<object>(null);
-#else
-            var twitterApiKey = ConfigurationManager.AppSettings["TwitterApiKey"];
-            var twitterSecretKey = ConfigurationManager.AppSettings["TwitterSecretKey"];
-            var twitterAccessToken = ConfigurationManager.AppSettings["twitterAccessToken"];
-            var twitterAccessSecret = ConfigurationManager.AppSettings["TwitterAccessSecret"];
-            var tokens = Tokens.Create(twitterApiKey, twitterSecretKey, twitterAccessToken, twitterAccessSecret);
-            await tokens.Statuses.UpdateAsync(status => msg);
-#endif
         }
     }
 }
