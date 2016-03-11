@@ -59,27 +59,11 @@ namespace TweetNicoCount
                 // 1行目のJSONを抜き出す.
                 var jsonFistLine = rawJson.Substring(0, rawJson.IndexOf("\n"));
 
-                // JsonConvertがパースできない [] を除去する.
-                var sanitizedJson = jsonFistLine.Replace("[", "").Replace("]", "");
-
-                // JSONと同じ構造の匿名型を定義する.
-                var definition = new
-                {
-                    Dqnid = "",
-                    Type = "",
-                    Values = new
-                    {
-                        _rowid = 0,
-                        Service = "",
-                        Total = 0,
-                    },
-                };
-
                 // 検索結果のJSONをパースする.
                 try
                 {
-                    var json = JsonConvert.DeserializeAnonymousType(sanitizedJson, definition);
-                    var total = json.Values.Total;
+                    var json = JsonConvert.DeserializeObject<JsonDefinition>(jsonFistLine);
+                    var total = json.Values[0].Total;
                     var msg = string.Format("nicovide.jpに投稿された {0} の動画は ＼{1}件／ です\n"
                         + "http://search.nicovideo.jp/video/search/{2}?sort=upload_time\n"
                         + "{3}",
