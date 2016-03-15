@@ -1,6 +1,9 @@
 # TweetNicoCountForQuerychan
 クエリちゃんの動画投稿数をツイートするサービス
 
+## 概要
+nicovideo.jpを「mmd クエリちゃん」でキーワード検索し、該当する動画の数をツイートします。
+
 ## スクリーンショット
 ![スクリーンショット](https://github.com/mtk-f/TweetNicoCountForQuerychan/blob/master/screenshot.png)
 
