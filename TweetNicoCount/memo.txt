@@ -1,0 +1,87 @@
+﻿http://search.nicovideo.jp/video/search/mmd%20%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%A1%E3%82%83%E3%82%93?sort=upload_time
+
+POST
+http://api.search.nicovideo.jp/api/
+{"query":"mmd クエリちゃん","service":["video"],"search":["title","description","tags"],"join":["cmsid","title","description","thumbnail_url","start_time","view_counter","comment_counter","mylist_counter","channel_id","main_community_id","length_seconds","last_res_body"],"filters":[],"sort_by":"start_time","order":"desc","from":0,"size":25,"timeout":10000,"issuer":"pc","reason":"user"}
+
+
+{"dqnid":"e7d2b955-c8a0-4fba-816d-744784bd0e6d","type":"stats","values":[{"_rowid":0,"service":"video","total":6}]}
+{"dqnid":"e7d2b955-c8a0-4fba-816d-744784bd0e6d","endofstream":true,"type":"stats"}
+{"dqnid":"e7d2b955-c8a0-4fba-816d-744784bd0e6d","type":"hits","values":[{"_rowid":0,"channel_id":false,"cmsid":"sm28331187","comment_counter":0,"description":"MMDモデルに真似したモデリングしたクエリちゃんM-Kモデル（右側）のデモです。<br \/><br \/><br \/>クエリちゃん公式サイト<br \/>http:\/\/www.query-chan.com\/<br \/><br \/><b>ライセンス<\/b><br \/><b>\"Query-Chan model\"はCreative Commons Attribution 4.0 International License(CC-BY)に基づいて配布されています。<\/b>","last_res_body":false,"length_seconds":153,"main_community_id":false,"mylist_counter":0,"start_time":"2016-03-01 18:12:09","thumbnail_url":"http:\/\/tn-skr4.smilevideo.jp\/smile?i=28331187","title":"【クエリちゃん】クエリちゃんM-Kモデルデモ【Unity】","view_counter":53},{"_rowid":1,"channel_id":false,"cmsid":"sm27690726","comment_counter":0,"description":"http:\/\/blog.fujiu.jp\/2015\/11\/mmd-ver102.html<br \/><br \/>【APヘタリアMMD】三人で Girls【モーション配布】sm21345387<br \/>【MMDステージ配布】昼間の雪山 N2【スカイドーム】 im4631674<br \/>【MME】玉ボケDOF【配布】 sm13874342<br \/>Cloud9式お皿<br \/>そぼろ式WorldSnow<br \/>","last_res_body":false,"length_seconds":41,"main_community_id":false,"mylist_counter":5,"start_time":"2015-11-29 08:17:23","thumbnail_url":"http:\/\/tn-skr3.smilevideo.jp\/smile?i=27690726","title":"クエリちゃん・クリスマス版 &amp; クエリちゃんver1.02 MMDモデル配布","view_counter":643},{"_rowid":2,"channel_id":false,"cmsid":"sm27676388","comment_counter":11,"description":"クエリちゃん、お茶の愛ちゃん(埼玉県のお茶のイメージキャラクター)の新モデルが公開され、さらにキャラサミのキャラクタが増えました。<br \/>そこで、今年MMDデビューしたスカイちゃん、いちごの国のイーたんとともに4人組(カルテット)を組んで、自分の原点であるこの曲でダンスです。<br \/>動画終盤では、カムイちゃんたち4人もモニタ出演です→同時にアップしたこちらの動画の映像を使っています→ sm27676448<br \/><br \/>今回、クエリちゃんのモデルの件で、多くの方々のお世話になったことに感謝いたします。<br \/><br \/>楽曲 kusemono 様(sm12616770)<br \/>振り付け：足太ぺんた様(sm17486994)<br \/>モーション:盗賊つばき様(sm25568088)<br \/>その他は動画内クレジットおよびコンテンツツリー参照<br \/><br \/>MMDに携わる全ての皆様に感謝です。","last_res_body":"うぽつですʕ•̀ω•́ʔ✧ お疲れ様でした＼(ず・ω・だ)\/ 拍手なのです(*´∀`*) @スカイちゃん...","length_seconds":179,"main_community_id":false,"mylist_counter":14,"start_time":"2015-11-27 21:00:00","thumbnail_url":"http:\/\/tn-skr1.smilevideo.jp\/smile?i=27676388","title":"【MMD】クエリちゃんたちキャラサミ新人組で「多重未来のカルテット」","view_counter":432},{"_rowid":3,"channel_id":false,"cmsid":"sm27658791","comment_counter":3,"description":"http:\/\/blog.fujiu.jp\/2015\/11\/mmd-sd.html<br \/><br \/><br \/>等身大クエリちゃんMMDモデルも公開中 #sm27579362<br \/><br \/>ねんどろBad_Appleモーション #sm14396296<br \/>たけ〇この里みたいな所 #sm19399889<br \/>","last_res_body":"水戸黄門のテーマか!? おおお、すごくかわええ うぽつー ","length_seconds":49,"main_community_id":false,"mylist_counter":3,"start_time":"2015-11-24 17:35:34","thumbnail_url":"http:\/\/tn-skr4.smilevideo.jp\/smile?i=27658791","title":"SDクエリちゃんズMMDモデル配布","view_counter":141},{"_rowid":4,"channel_id":false,"cmsid":"sm27579362","comment_counter":0,"description":"公開予定のクエリちゃんMMDモデルにきしめんモーション11\/15 公開しましたhttp:\/\/blog.fujiu.jp\/2015\/11\/mmd.html","last_res_body":false,"length_seconds":27,"main_community_id":false,"mylist_counter":5,"start_time":"2015-11-13 18:59:03","thumbnail_url":"http:\/\/tn-skr3.smilevideo.jp\/smile?i=27579362","title":"クエリちゃんMMDモデル配布","view_counter":432},{"_rowid":5,"channel_id":false,"cmsid":"sm26590830","comment_counter":7,"description":"協力（順不同・敬称略）ふぉっくす紺子ちゃん（アキバ＆ＰＣ業界応援キャラ）、クエリちゃん（株式会社ポケッ­ト・クエリーズ）、京町セイカ（京都府）、江ノ島さんぽちゃん（神奈川県）、あみたん娘（富山県）、福島ラーメン組っ！（福島県）、小峰シロ（福­島県）、会津問屋萌えの桜（福島県）、元祖萌酒屋井上酒店（埼玉県）、いちごの­くにのイーたん（栃木県）小峰シロ（福島県）、ウタリプロダクション（北海道）、まろ­にえ～る（栃木県）、足利いいねこ。のみせ・弁天ちゃん。（栃木県）、小山芳姫（栃木­県）、レコちゃん（東京造形大学）、巻線妖怪マキ栃木県宇都宮市ご当地萌えキャラ祭りコスプレイヤーの方々企画：ご当地キャラショップ和な～る・【上州真田】信之・小松姫プロジェクト（群馬県）","last_res_body":"おい www 明らかに霊夢が 画質が良くなってる! うぽーー 右側の女装の人主張しすぎててワロ...","length_seconds":332,"main_community_id":false,"mylist_counter":8,"start_time":"2015-06-28 19:42:18","thumbnail_url":"http:\/\/tn-skr3.smilevideo.jp\/smile?i=26590830","title":"『みんなで踊ろう！ウーッウッウマウマ！』萌えキャラver.","view_counter":341}]}
+{"dqnid":"e7d2b955-c8a0-4fba-816d-744784bd0e6d","endofstream":true,"type":"hits"}
+
+
+// 匿名関数用デリゲート.
+private delegate Task<string> GetStringAsync();
+GetStringAsync responseString = async () =>
+	{
+		using (var client = new HttpClient())
+		{
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MEDIA_TYPE));
+			var content = new StringContent(postConstnt, System.Text.Encoding.UTF8, MEDIA_TYPE);
+			var response = await client.PostAsync(URL, content);
+			if (response.IsSuccessStatusCode)
+			{
+				return await response.Content.ReadAsStringAsync();
+			}
+			else
+			{
+				return null;
+			}
+		}
+	};
+var rawJson = await responseString();
+
+
+// 非同期ラムダ式.
+var task = new Task<Task>(async () => {
+    await Task.Delay(1000);
+});
+
+
+
+前回との比較
+ConfigurationManager.RefreshSection("appSettings");
+var lastTotal = int.Parse(ConfigurationManager.AppSettings[KEY]);
+var compartion = total - lastTotal;
+var msg = string.Format("nicovide.jpに投稿された {0} の動画は ＼ {1}件／ です (前回比{2:+#;-#;0;})\n"
+    + "http://search.nicovideo.jp/video/search/mmd%20%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%A1%E3%82%83%E3%82%93?sort=upload_time\n"
+    + "{3}",
+    KEYWORD, total, compartion, TWEET_TAG);
+
+		
+var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+config.AppSettings.Settings.Remove(KEY);
+config.AppSettings.Settings.Add(KEY, total.ToString());
+config.Save(ConfigurationSaveMode.Modified);
+
+
+名前解決
+using (var client = new HttpClient())
+{
+    Console.WriteLine("before GetStringAsync");
+    var uri = new Uri("http://fujiu.jpppp/");
+    try
+    {
+        var ipAddresses = System.Net.Dns.GetHostEntry(uri.Host);
+    } catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+    var source = await client.GetStringAsync(uri);
+    Console.WriteLine(source);
+}
+
+var uri = new Uri(URL);
+try
+{
+    Console.WriteLine(uri.Host);
+    var ipAdresses =  System.Net.Dns.GetHostEntry(uri.Host);
+    Console.WriteLine(ipAdresses.AddressList[0]);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+    return;
+}
+

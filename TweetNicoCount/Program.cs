@@ -48,8 +48,9 @@ namespace TweetNicoCount
                 }
             })();
 
-            // ツイッターAPIのトークンを取得する.
-            var tokens = Tokens.Create(ConfigurationManager.AppSettings["TwitterApiKey"], 
+            // ツイッターAPIのトークンを設定する.
+            var tokens = Tokens.Create(
+                ConfigurationManager.AppSettings["TwitterApiKey"], 
                 ConfigurationManager.AppSettings["TwitterSecretKey"], 
                 ConfigurationManager.AppSettings["twitterAccessToken"], 
                 ConfigurationManager.AppSettings["TwitterAccessSecret"]);
